@@ -1,0 +1,28 @@
+.video > img {
+  width: 250px;
+}
+
+.video_content {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.video_title {
+  margin-top: -15px;
+}
+
+.video_title > h5 {
+  font-size: 14px;
+  color: #ccc;
+  padding-left: 10px;
+}
+
+.video_title > h4 {
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.video {
+  margin: 10px;
+}

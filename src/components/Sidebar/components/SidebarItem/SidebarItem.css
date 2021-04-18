@@ -1,0 +1,29 @@
+.sidebar_item {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.sidebar_item > h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.sidebar_item__icon {
+  padding: 20px;
+}
+
+.sidebar_item:hover {
+  background-color: #ccc;
+}
+
+.active {
+  background-color: #ccc;
+}
+
+.sidebar_links {
+  text-decoration: none;
+  color: black;
+}

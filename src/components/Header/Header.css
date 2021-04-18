@@ -32,7 +32,7 @@
 
 .header__search__icon {
   flex: 0.15;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #ccc;
   padding: 3px 3px;
   cursor: pointer;
   text-align: center;

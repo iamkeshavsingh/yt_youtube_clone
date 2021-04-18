@@ -12,9 +12,7 @@ import PersonIcon from '@material-ui/icons/Person';
 
 import './Header.css';
 
-import { signInWithGoogle } from '../../config/firebase.config';
-import { signIn, logout } from '../../store/actions/user.action';
-import { auth as fireAuth } from '../../config/firebase.config';
+import { signInAsync, logoutAsync } from '../../store/actions/user.action';
 
 function HeaderComponent({ auth, signIn, logout }) {
 
@@ -25,21 +23,10 @@ function HeaderComponent({ auth, signIn, logout }) {
     function handleClick() {
 
         if (!auth.user) {
-            return signInWithGoogle().then(data => {
-                const { email, name } = data.additionalUserInfo.profile;
-                const { idToken } = data.credential;
-                signIn({
-                    user: {
-                        email,
-                        name,
-                        idToken
-                    }
-                });
-            });
+            return signIn();
         }
 
-        fireAuth.signOut().then(logout);
-
+        return logout();
     }
 
     function renderAvatar() {
@@ -99,8 +86,8 @@ var mapStateToProps = (state) => {
 var mapDispatchToProps = (dispatch) => {
 
     return {
-        signIn: (user) => dispatch(signIn(user)),
-        logout: () => dispatch(logout())
+        signIn: () => dispatch(signInAsync()),
+        logout: () => dispatch(logoutAsync())
     };
 }
 
